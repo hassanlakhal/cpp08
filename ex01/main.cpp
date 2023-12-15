@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/15 01:22:56 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/12/15 05:41:56 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,26 @@
 
 int main()
 {
-    Span sp = Span(5);
-    sp.addNumber(6);
-    sp.addNumber(3);
-    sp.addNumber(17);
-    sp.addNumber(9);
-    sp.addNumber(11);
-    std::cout << sp.shortestSpan() << std::endl;
-    std::cout << sp.longestSpan() << std::endl;
+    unsigned int N = 10;
+    Span sp = Span(N);
+    try
+    {
+        srand(time(NULL));
+        std::cout << "list : { ";
+        for (size_t i = 0; i < N; i++)
+        {  
+            int num = rand() % 100 + 1;
+            std::cout << num << " ";
+            sp.addNumber(num);
+        }
+        std::cout << "} " << std::endl;
+        std::cout << "---------------\n";
+        std::cout << sp.shortestSpan() << std::endl;
+        std::cout << sp.longestSpan() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+        std::cerr << e.what() << '\n';
+    }
     return 0;
 }

@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:34 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/15 01:21:09 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/12/15 05:13:39 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,18 @@ Span::Span(unsigned int N) :N(N)
     
 }
 
-Span::Span(const Span& other)
+Span::Span(const Span& other): N(other.N), tab(other.tab)
 {
     
 }
 
 Span& Span::operator=(const Span& other)
 {
+    if (this != &other)
+    {
+        this->N = other.N;
+        this->tab = other.tab;
+    }
     return *this;
 }
 
@@ -38,6 +43,8 @@ Span::~Span()
 
 int Span::longestSpan()
 {
+    if(tab.size() <= 1)
+        throw std::runtime_error("no span can be found !!");
     std::vector<int> sortTab = tab;
     std::sort(sortTab.begin(),sortTab.end());
     int maxSpan = sortTab[sortTab.size() - 1] - sortTab[0];
@@ -46,6 +53,8 @@ int Span::longestSpan()
 
 int Span::shortestSpan()
 {
+     if(tab.size() <= 1)
+        throw std::runtime_error("no span can be found !!");
     std::vector<int> sortTab = tab;
     std::sort(sortTab.begin(),sortTab.end());
     int minSpan = sortTab[1] - sortTab[0];
