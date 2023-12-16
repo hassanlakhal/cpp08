@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:34 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/15 05:13:39 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/12/15 21:47:04 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int Span::longestSpan()
 
 int Span::shortestSpan()
 {
-     if(tab.size() <= 1)
+    if(tab.size() <= 1)
         throw std::runtime_error("no span can be found !!");
     std::vector<int> sortTab = tab;
     std::sort(sortTab.begin(),sortTab.end());
@@ -68,7 +68,7 @@ int Span::shortestSpan()
 
 void Span::addNumber(int num)
 {
-    tab.push_back(num);
-    if (tab.size() > N)
+    if (tab.size() >= N)
         throw std::runtime_error("out of rang !!");
+    tab.push_back(num);
 }
