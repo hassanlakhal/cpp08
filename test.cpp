@@ -1,25 +1,28 @@
-#include <iostream>
-#include <stack>
-
-int main() {
-    // Create a stack of integers using the default container (std::deque)
-    std::stack<int> myStack;
-
-    // Push elements onto the stack
-    myStack.push(1);
-    myStack.push(2);
-    myStack.push(3);
-
-    // Check if the stack is empty
-    if (!myStack.empty()) {
-        // Access the top element
-        std::cout << "Top element: " << myStack.top() << std::endl;
-
-        // Pop the top element
-        myStack.pop();
+#include <deque>
+#include <iterator>
+#include<vector>
+#include<iostream>
+    #include <list>
+int main()
+{
+std::vector<int> myList;
+myList.push_back(1);
+myList.push_back(2);
+myList.push_back(3);
+myList.push_back(4);
+std::vector<int>::iterator it = myList.begin();
+it[1];
+if (it != myList.end()) { // Check if not at end
+  std::cout << *it << " "; // Print first element
+  ++it; // Move to next element
+  while (it != myList.end()) { // Loop through remaining elements
+    if (*it % 2 == 0) { // Check if even
+      std::cout << *it << " ";
     }
-
-    // The stack now contains 2 elements (1 and 2)
-
-    return 0;
+    ++it;
+  }
 }
+std::cout << std::endl;
+}
+
+
