@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:20:49 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/16 01:15:46 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2023/12/16 07:46:46 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int main()
     mstack.push(17);
     std::cout << mstack.top() << std::endl;
     mstack.pop();
-    std::cout << mstack.size() << std::endl;
+    std::cout << " size : "<< mstack.size() << std::endl;
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
@@ -32,9 +32,8 @@ int main()
     --it;
     while (it != ite)
     {
-    std::cout << *it << std::endl;
-    ++it;
+        std::cout << "element of the stack : " <<  *it << std::endl;
+        ++it;
     }
-    std::stack<int> s(mstack);
     return 0;
 }
