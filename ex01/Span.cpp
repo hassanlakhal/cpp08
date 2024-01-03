@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:34 by hlakhal-          #+#    #+#             */
-/*   Updated: 2024/01/03 03:53:09 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2024/01/03 16:42:20 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,7 @@
 Span::Span():N(0){}
 Span::Span(unsigned int N) :N(N)
 {
-    if(N > static_cast<unsigned int>(std::numeric_limits<int>::max()))
-        throw std::runtime_error("out of rang");   
+    
 }
 
 Span::Span(const Span& other): N(other.N), tab(other.tab)
