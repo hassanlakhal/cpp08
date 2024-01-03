@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/15 21:46:43 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2024/01/03 03:51:21 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 int main()
 {
-    unsigned int N = 10;
-    Span sp = Span(N);
     try
     {
-        srand(time(NULL));
-        std::cout << "list : { ";
-        for (size_t i = 0; i < N; i++)
-        {  
-            int num = rand() % 100 + 1;
-            std::cout << num << " ";
-            sp.addNumber(num);
-        }
-        std::cout << "} " << std::endl;
-        std::cout << "---------------\n";
-        std::cout << sp.shortestSpan() << std::endl;
-        std::cout << sp.longestSpan() << std::endl;
+        Span mySpan(2147483649);
+        std::vector<int> list;
+        list.push_back(1);
+        list.push_back(3);
+        list.push_back(4);
+        list.push_back(10);
+        mySpan.addNumber(6);
+        mySpan.addNumber(52);
+        mySpan.addNumber(17);
+        mySpan.addNumber(9);
+        mySpan.addNumber(11);
+        mySpan.addRange(list.begin(), list.end());
+        std::cout << mySpan.longestSpan() << std::endl;
+        std::cout << mySpan.shortestSpan() << std::endl;
     }
     catch(const std::exception& e)
     {

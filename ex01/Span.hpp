@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:37 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/15 01:10:56 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2024/01/03 03:06:28 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,26 @@ public:
     int longestSpan();
     Span& operator=(const Span& other);
     ~Span();
+    template<typename Iterator>
+    void addRange(Iterator first, Iterator last)
+    {
+        if (std::distance(first,last) > N)
+            throw std::runtime_error("out of rang !!");
+        tab.insert(tab.end(),first,last);
+        if (tab.size() >= N)
+            throw std::runtime_error("out of rang !!"); 
+    }
+    template<typename Container>
+    void displayNumbers(Container& arr)
+    {
+        typename Container::iterator it = arr.begin();
+        while (it != arr.end())
+        {
+            std::cout << *it << " ";
+            it++;
+        }
+        std::cout << std::endl;
+    } 
 };
 
 

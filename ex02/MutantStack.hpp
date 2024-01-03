@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 23:20:55 by hlakhal-          #+#    #+#             */
-/*   Updated: 2023/12/16 22:37:13 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2024/01/03 02:10:53 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,35 @@ class MutantStack : public std::stack<T>
 {
     public:
         typedef typename std::stack<T>::container_type::iterator iterator;
-        iterator begin() 
+        typedef typename std::stack<T>::container_type::const_iterator const_iterator;
+        iterator begin()
         {
-            return std::stack<T>::c.begin();
+            return this->c.begin();
         }
-        iterator end() 
+        iterator end()
         {
-            return std::stack<T>::c.end();
+            return this->c.end();
         }
+        const_iterator begin() const 
+        {
+            return this->c.begin();
+        }
+        const_iterator end() const
+        {
+            return this->c.end();
+        }
+        MutantStack()
+        {    
+        }
+        MutantStack(const MutantStack& other)
+        {
+            *this = other;    
+        }
+        MutantStack& operator=(const MutantStack& other)
+        {
+            if(this != other){}
+            return *this;   
+        }
+        ~MutantStack(){}
 };
 
