@@ -3,26 +3,20 @@
 #include<vector>
 #include<iostream>
     #include <list>
-int main()
-{
-std::vector<int> myList;
-myList.push_back(1);
-myList.push_back(2);
-myList.push_back(3);
-myList.push_back(4);
-std::vector<int>::iterator it = myList.begin();
-it[1];
-if (it != myList.end()) { // Check if not at end
-  std::cout << *it << " "; // Print first element
-  ++it; // Move to next element
-  while (it != myList.end()) { // Loop through remaining elements
-    if (*it % 2 == 0) { // Check if even
-      std::cout << *it << " ";
+#include <iostream>
+#include <deque>
+
+int main() {
+    std::deque<int> myVector;
+
+    // Add some elements to the vector
+    for (int i = 0; i < 35; ++i) {
+        myVector.push_back(i);
+        std::cout << "Size: " << myVector.size() << ", Capacity: " << myVector.capacity() << std::endl;
     }
-    ++it;
-  }
+
+    return 0;
 }
-std::cout << std::endl;
-}
+
 
 
