@@ -8,7 +8,8 @@
 
 int main() {
     std::deque<int> myVector;
-
+    std::deque<int>::difference_type it;
+    
     // Add some elements to the vector
     for (int i = 0; i < 35; ++i) {
         myVector.push_back(i);
