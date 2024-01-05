@@ -6,7 +6,7 @@
 /*   By: hlakhal- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/14 22:56:26 by hlakhal-          #+#    #+#             */
-/*   Updated: 2024/01/03 17:44:18 by hlakhal-         ###   ########.fr       */
+/*   Updated: 2024/01/05 05:27:07 by hlakhal-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main()
         mySpan.addNumber(17);
         mySpan.addNumber(9);
         mySpan.addNumber(11);
-        mySpan.addRange(list.begin(), list.end());
+        mySpan.addRange<std::vector<int>::iterator , std::vector<int> >(list.begin(), list.end());
         std::cout << mySpan.longestSpan() << std::endl;
         std::cout << mySpan.shortestSpan() << std::endl;
     }
